@@ -8,10 +8,15 @@ services:
     expose:
       - "5000"
 
-  nginx:
-    build:
-      context: ./nginx # Replace with the path to your application code
-      dockerfile: nginx.Dockerfile # Replace with the actual name of your Dockerfile
-    ports:
-      - "80:80"
-    restart: always # Restart the container automatically if it stops
+  # nginx:
+  #   build:
+  #     context: ./nginx # Replace with the path to your application code
+  #     dockerfile: nginx.Dockerfile # Replace with the actual name of your Dockerfile
+  #   ports:
+  #     - "80:80"
+  #   restart: always # Restart the container automatically if it stops
+
+  waf:
+      build: waf-3
+      ports:
+          - "80:80"
